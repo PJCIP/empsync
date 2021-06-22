@@ -107,6 +107,7 @@ public class owntransport extends AppCompatActivity {
         Global.frommail="projectlgb7@gmail.com";
         Global.frompassword="Frontyard@lgb2021";
         Global.state = true;
+//        Places.initialize(getApplicationContext(),"AIzaSyDoWxZkx6WMF4PUV-pkU-8mqgeYnKSXJPQ");
         textView1 = findViewById(R.id.text_view1);
         textView = findViewById(R.id.text_view);
         textView2 = findViewById(R.id.text_view2);
@@ -210,12 +211,13 @@ public class owntransport extends AppCompatActivity {
                         String mailc = String.valueOf(childSnapshot.getValue());
                         ccmail.add(mailc);
                     }
-                    Toast.makeText(owntransport.this, "Fetched cc"+ccmail, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(owntransport.this, "Fetched cc"+ccmail, Toast.LENGTH_LONG).show();
                     for (DataSnapshot childSnapshot : snapshot.child("bcc").getChildren()) {
                         String mailc = String.valueOf(childSnapshot.getValue());
                         bccmail.add(mailc);
                     }
-                    Toast.makeText(owntransport.this, "Fetched bcc"+bccmail, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(owntransport.this, "Fetched bcc"+bccmail, Toast.LENGTH_LONG).show();
+                    Toast.makeText(owntransport.this, "Fetched mailid", Toast.LENGTH_LONG).show();
                 }
                 else{
                     Toast.makeText(owntransport.this, "Unable to fetch mailid", Toast.LENGTH_LONG).show();

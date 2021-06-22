@@ -106,12 +106,12 @@ public class publictransport extends AppCompatActivity
                         String mailc = String.valueOf(childSnapshot.getValue());
                         ccmail.add(mailc);
                     }
-                    Toast.makeText(publictransport.this, "Fetched cc"+ccmail, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(publictransport.this, "Fetched cc"+ccmail, Toast.LENGTH_LONG).show();
                     for (DataSnapshot childSnapshot : snapshot.child("bcc").getChildren()) {
                         String mailc = String.valueOf(childSnapshot.getValue());
                         bccmail.add(mailc);
                     }
-                    Toast.makeText(publictransport.this, "Fetched bcc"+bccmail, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(publictransport.this, "Fetched bcc"+bccmail, Toast.LENGTH_LONG).show();
 
                 }
                 else{

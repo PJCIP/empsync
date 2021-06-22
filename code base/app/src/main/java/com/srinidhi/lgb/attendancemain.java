@@ -92,6 +92,7 @@ public class attendancemain extends AppCompatActivity {
             buildAlertMessageNoGps();
         }
 
+//        Places.initialize(getApplicationContext(),"AIzaSyDoWxZkx6WMF4PUV-pkU-8mqgeYnKSXJPQ");
         logintime = findViewById(R.id.logintime);
         logouttime = findViewById(R.id.logoutime);
 
