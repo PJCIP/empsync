@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg"
+    tools:context=".BlankFragment2">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/pro_image"-->
+<!--            android:layout_width="96dp"-->
+<!--            android:layout_height="96dp"-->
+
+<!--            android:layout_gravity="top|center"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:layout_marginEnd="2dp"-->
+<!--            android:layout_marginRight="21dp"-->
+<!--            android:innerRadius="5dp"-->
+<!--            android:shape="ring"-->
+<!--            android:src="@drawable/profile"-->
+<!--            android:thicknessRatio="1"-->
+<!--            app:civ_border_color="@android:color/white"-->
+<!--            app:civ_border_width="2dp" />-->
+
+    <EditText
+        android:id="@+id/Job_role"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:hint="Job Role"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="19sp" />
+
+    <EditText
+        android:id="@+id/Dep"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_below="@+id/Job_role"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:hint="Department"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="19sp" />
+
+    <EditText
+        android:id="@+id/Vehi"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_below="@+id/Dep"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:hint="Vehicle Name"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="19sp" />
+
+    <EditText
+        android:id="@+id/Model_name"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_below="@+id/Vehi"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:hint="Vehicle Model Name"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="19sp" />
+
+    <EditText
+        android:id="@+id/eng_cc"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_below="@+id/Model_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:hint="Vehicle Engine CC (eg:-125)"
+        android:inputType="text"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="19sp" />
+
+    <EditText
+        android:id="@+id/cnfrm_phone"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_below="@+id/Job_role"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="315dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:hint="Re-enter Phone Number"
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textSize="19sp" />
+
+    <Button
+        android:id="@+id/asset_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eng_cc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="10dp"
+
+        android:background="@drawable/buttons"
+        android:padding="17dp"
+        android:text="SUBMIT"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</FrameLayout>

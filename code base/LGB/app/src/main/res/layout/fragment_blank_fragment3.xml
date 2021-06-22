@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg"
+    tools:context=".BlankFragment3">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+    android:id="@+id/txtVw2"
+    android:layout_width="203dp"
+    android:layout_height="65dp"
+    android:layout_marginLeft="15dp"
+        android:layout_below="@+id/txtVw3"
+    android:layout_marginTop="20dp"
+    android:text="Select Job Role:"
+    android:padding="20dp"
+    android:background="@drawable/input_design"
+    android:textSize="19sp"
+    android:textColor="@color/colorPrimary"/>
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="160dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/txtVw"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/eng_cc"
+        android:textSize="19sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"/>
+
+<!--    <EditText-->
+<!--        android:id="@+id/Vehi"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="59dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:layout_marginTop="90dp"-->
+<!--        android:layout_marginRight="15dp"-->
+<!--        android:background="@drawable/input_design"-->
+<!--        android:hint="Vehicle Name"-->
+<!--        android:inputType="text"-->
+<!--        android:padding="20dp"-->
+<!--        android:textColor="@color/colorPrimaryDark"-->
+<!--        android:textColorHint="@color/colorPrimaryDark"-->
+<!--        android:textSize="19sp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/Model_name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="59dp"-->
+<!--        android:layout_below="@+id/Vehi"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:layout_marginRight="15dp"-->
+<!--        android:background="@drawable/input_design"-->
+<!--        android:hint="Vehicle Model Name"-->
+<!--        android:inputType="text"-->
+<!--        android:padding="20dp"-->
+<!--        android:textColor="@color/colorPrimaryDark"-->
+<!--        android:textColorHint="@color/colorPrimaryDark"-->
+<!--        android:textSize="19sp" />-->
+
+    <TextView
+        android:id="@+id/txtVw4"
+        android:layout_width="203dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Vehicle Type:"
+        android:padding="20dp"
+        android:background="@drawable/input_design"
+        android:textSize="19sp"
+        android:textColor="@color/colorPrimary"/>
+    <Spinner
+        android:id="@+id/vehic_type"
+        android:layout_width="160dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/txtVw"
+        android:layout_marginTop="20dp"
+        android:textSize="19sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"/>
+
+<!--    <EditText-->
+<!--        android:id="@+id/eng_cc"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="59dp"-->
+<!--        android:layout_below="@+id/Model_name"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginRight="15dp"-->
+<!--        android:background="@drawable/input_design"-->
+<!--        android:hint="Vehicle Engine CC (eg:-125)"-->
+<!--        android:inputType="text"-->
+<!--        android:padding="20dp"-->
+<!--        android:textColor="@color/colorPrimaryDark"-->
+<!--        android:textColorHint="@color/colorPrimaryDark"-->
+<!--        android:textSize="19sp" />-->
+
+    <TextView
+        android:id="@+id/txtVw3"
+        android:layout_width="203dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        android:text="Vehicle cc/Model name:"
+        android:layout_below="@+id/vehic_type"
+        android:padding="20dp"
+        android:background="@drawable/input_design"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"/>
+    <Spinner
+        android:id="@+id/eng_cc"
+        android:layout_width="160dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/txtVw"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/vehic_type"
+        android:textSize="19sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"/>
+
+
+
+    <TextView
+        android:id="@+id/txtVw"
+        android:layout_width="203dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/txtVw2"
+        android:layout_marginTop="20dp"
+        android:text="Select Department:"
+        android:padding="20dp"
+        android:background="@drawable/input_design"
+        android:textSize="19sp"
+        android:textColor="@color/colorPrimary"/>
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="160dp"
+        android:layout_height="65dp"
+        android:layout_alignBottom="@+id/txtVw"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/txtVw"
+        android:layout_marginTop="20dp"
+        android:textSize="19sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/asset_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="130dp"
+        android:layout_below="@id/txtVw"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+
+        android:background="@drawable/buttons"
+        android:padding="17dp"
+        android:text="SUBMIT"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+
+
+
+</RelativeLayout>

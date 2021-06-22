@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".BlankFragment">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="0dp">
+
+
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/swiperefreshlayout"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/input_design"
+            android:paddingLeft="5dp"
+            android:padding="2dp"
+            android:text="Name"
+            android:textColor="@color/indicator_1"
+            android:textSize="30sp" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefreshnamelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="70dp">
+
+            <!-- Simple Text View inside Swipe  Refresh Layout -->
+
+            <TextView
+                android:id="@+id/swipename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/input_design"
+                android:foregroundGravity="center"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/indicator_1"
+                android:textSize="30sp" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/Job_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/swiperefreshnamelayout"
+            android:layout_marginTop="130dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/input_design"
+            android:padding="2dp"
+            android:text="Job Role"
+            android:textColor="@color/indicator_1"
+            android:textSize="30sp" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefreshjoblayout"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="130dp">
+
+            <!-- Simple Text View inside Swipe  Refresh Layout -->
+
+            <TextView
+                android:id="@+id/swipejob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/input_design"
+                android:foregroundGravity="center"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/indicator_1"
+                android:textSize="30sp" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/Dep_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/swiperefreshlayout"
+            android:layout_marginTop="190dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/input_design"
+            android:padding="2dp"
+            android:text="Department"
+            android:textColor="@color/indicator_1"
+            android:textSize="30sp" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefreshdeplayout"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="190dp">
+
+            <!-- Simple Text View inside Swipe  Refresh Layout -->
+
+            <TextView
+                android:id="@+id/swipedep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/input_design"
+                android:foregroundGravity="center"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/indicator_1"
+                android:textSize="30sp" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/vehiname_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/swiperefreshlayout"
+            android:layout_marginTop="250dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/input_design"
+            android:padding="2dp"
+            android:text="Vehicle Type"
+            android:textColor="@color/indicator_1"
+            android:textSize="30sp" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefreshvnamelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="250dp"
+            >
+
+            <!-- Simple Text View inside Swipe  Refresh Layout -->
+
+            <TextView
+                android:id="@+id/swipevehiname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="250dp"
+                android:background="@drawable/input_design"
+                android:foregroundGravity="center"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/indicator_1"
+                android:textSize="30sp" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/vehimodal_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/swiperefreshlayout"
+            android:layout_marginTop="308dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/input_design"
+            android:padding="2dp"
+            android:text="Vehicle Modal/cc"
+            android:textColor="@color/indicator_1"
+            android:textSize="25sp" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefreshvmodallayout"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="307dp">
+
+            <!-- Simple Text View inside Swipe  Refresh Layout -->
+
+            <TextView
+                android:id="@+id/swipevehimodalname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="307dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/input_design"
+                android:foregroundGravity="center"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/indicator_1"
+                android:textSize="30sp" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/vehicc_label"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_below="@id/swiperefreshlayout"-->
+<!--            android:layout_marginTop="368dp"-->
+<!--            android:paddingLeft="5dp"-->
+<!--            android:background="@drawable/input_design"-->
+<!--            android:padding="2dp"-->
+<!--            android:text="Engine CC"-->
+<!--            android:textColor="@color/indicator_1"-->
+<!--            android:textSize="30sp" />-->
+
+<!--        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--            android:id="@+id/swiperefreshvcclayout"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="46dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_marginLeft="200dp"-->
+<!--            android:layout_marginTop="368dp">-->
+
+<!--            &lt;!&ndash; Simple Text View inside Swipe  Refresh Layout &ndash;&gt;-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/swipevehiengcc"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="368dp"-->
+<!--                android:layout_marginRight="50dp"-->
+<!--                android:background="@drawable/input_design"-->
+<!--                android:foregroundGravity="center"-->
+<!--                android:gravity="center_horizontal"-->
+<!--                android:padding="5dp"-->
+<!--                android:text=""-->
+<!--                android:textColor="@color/indicator_1"-->
+<!--                android:textSize="30sp" />-->
+
+
+<!--        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefreshlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp">
+
+            <!-- Simple Text View inside Swipe  Refresh Layout -->
+
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="500dp"
+                android:background="@drawable/input_design"
+                android:foregroundGravity="center"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="If Nothing Displayed Swipe"
+                android:textColor="@color/indicator_1"
+                android:textSize="25sp" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </FrameLayout>
+
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        android:id="@+id/profile_image"-->
+<!--        android:layout_width="96dp"-->
+<!--        android:layout_height="96dp"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_gravity="top|center"-->
+<!--        android:layout_marginTop="2dp"-->
+
+<!--        android:layout_marginEnd="121dp"-->
+<!--        android:layout_marginRight="154dp"-->
+<!--        android:innerRadius="5dp"-->
+<!--        android:shape="ring"-->
+<!--        android:src="@drawable/profile"-->
+<!--        android:thicknessRatio="1"-->
+<!--        app:civ_border_color="@android:color/white"-->
+<!--        app:civ_border_width="2dp" />-->
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="1dp"
+        android:gravity="center"
+        android:paddingTop="50dp"
+        android:text="User_Name"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="1dp" />
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+
+</RelativeLayout>

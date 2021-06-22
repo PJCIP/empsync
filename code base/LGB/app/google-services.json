@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "180021226300",
+    "firebase_url": "https://lgbl-c68c1-default-rtdb.firebaseio.com",
+    "project_id": "lgbl-c68c1",
+    "storage_bucket": "lgbl-c68c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180021226300:android:0d2fd0408d1f845e634c39",
+        "android_client_info": {
+          "package_name": "com.srinidhi.lgb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180021226300-25dm9lpqdti6sqdh89r630reroa0en0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI6wd7XGDPXmUW7ueOiWMpTG3H9G3CfhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180021226300-25dm9lpqdti6sqdh89r630reroa0en0j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

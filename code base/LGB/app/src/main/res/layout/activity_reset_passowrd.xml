@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResetPasswordActivity">
+    <RelativeLayout
+        android:id="@+id/r5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark">
+        <TextView
+            android:id="@+id/title_rst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Password"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+
+            />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/find_phone_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please Write Your Phone Number"
+        android:inputType="number"
+        android:layout_below="@+id/r5"
+        android:background="@drawable/input_design"
+        android:padding="14dp"
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:id="@+id/ans_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Answer The Security Questions..."
+        android:gravity="center"
+        android:textSize="26dp"
+        android:layout_below="@+id/find_phone_no"
+        android:layout_marginTop="15dp"
+        />
+    <EditText
+        android:id="@+id/question_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Pet Name?"
+        android:layout_below="@+id/ans_title"
+        android:background="@drawable/input_design"
+        android:padding="14dp"
+        android:layout_margin="15dp"
+        />
+    <EditText
+        android:id="@+id/question_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Favourite SuperHero Name?"
+        android:layout_below="@+id/question_1"
+        android:background="@drawable/input_design"
+        android:padding="14dp"
+        android:layout_margin="15dp"
+        />
+<!--    <TextView-->
+<!--        android:id="@+id/disclaimer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/quantum_googred"-->
+<!--        android:text="Please don't press any enter key after answer"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="20dp"-->
+<!--        android:layout_below="@+id/question_2"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        />-->
+    <Button
+        android:id="@+id/ques_submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify Answers"
+        android:layout_below="@+id/question_2"
+        android:background="@drawable/buttons"
+        android:padding="14dp"
+        android:layout_margin="15dp"
+        android:textColor="@android:color/white"
+        />
+
+</RelativeLayout>
