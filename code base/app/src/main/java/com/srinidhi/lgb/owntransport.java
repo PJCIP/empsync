@@ -107,7 +107,6 @@ public class owntransport extends AppCompatActivity {
         Global.frommail="projectlgb7@gmail.com";
         Global.frompassword="Frontyard@lgb2021";
         Global.state = true;
-//        Places.initialize(getApplicationContext(),"AIzaSyDoWxZkx6WMF4PUV-pkU-8mqgeYnKSXJPQ");
         textView1 = findViewById(R.id.text_view1);
         textView = findViewById(R.id.text_view);
         textView2 = findViewById(R.id.text_view2);
