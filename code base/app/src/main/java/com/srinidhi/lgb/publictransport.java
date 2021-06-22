@@ -45,8 +45,10 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -72,7 +74,7 @@ public class publictransport extends AppCompatActivity
     Uri filepath;
     Bitmap bitmap;
     int ticket_id;
-
+    List<String> bccmail,ccmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -85,15 +87,31 @@ public class publictransport extends AppCompatActivity
         browse=(Button)findViewById(R.id.browse);
         ticket_id = Prefconfig.loadticketid(this);
 
-        DatabaseReference mailfetch = FirebaseDatabase.getInstance().getReference().child("admin").child("mail");
+        ccmail = new ArrayList<>();
+        bccmail = new ArrayList<>();
+        DatabaseReference mailfetch = FirebaseDatabase.getInstance().getReference().child("admin");
         mailfetch.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
 
-                    pGlobal.tomail = snapshot.getValue(String.class);
+                    pGlobal.tomail = snapshot.child("mail").getValue(String.class);
 //                    Toast.makeText(publictransport.this, "Admin mail id is "+ pGlobal.tomail, Toast.LENGTH_LONG).show();
                     Toast.makeText(publictransport.this, "Fetched mail id", Toast.LENGTH_LONG).show();
+                    //Need to convert the testmail to mail this is just for testing purpose
+//                    Global.tomail = snapshot.child("testmail").getValue(String.class);
+//                    Toast.makeText(owntransport.this, "Admin mail id is "+ Global.tomail+"my mail id is"+Global.frommail, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(publictransport.this, "Fetched mailid", Toast.LENGTH_LONG).show();
+                    for (DataSnapshot childSnapshot : snapshot.child("cc").getChildren()) {
+                        String mailc = String.valueOf(childSnapshot.getValue());
+                        ccmail.add(mailc);
+                    }
+                    Toast.makeText(publictransport.this, "Fetched cc"+ccmail, Toast.LENGTH_LONG).show();
+                    for (DataSnapshot childSnapshot : snapshot.child("bcc").getChildren()) {
+                        String mailc = String.valueOf(childSnapshot.getValue());
+                        bccmail.add(mailc);
+                    }
+                    Toast.makeText(publictransport.this, "Fetched bcc"+bccmail, Toast.LENGTH_LONG).show();
 
                 }
                 else{
@@ -240,6 +258,29 @@ public class publictransport extends AppCompatActivity
                             message.setFrom(new InternetAddress(frommail));
                             message.setRecipient(Message.RecipientType.TO, new InternetAddress(pGlobal.tomail.trim()));
 //                            message.setRecipient(Message.RecipientType.TO, new InternetAddress("pjcip1999@gmail.com"));
+                            InternetAddress[] ccAddress = new InternetAddress[ccmail.size()];
+
+                            // To get the array of ccaddresses
+                            for( int j = 0; j < ccmail.size(); j++ ) {
+                                ccAddress[j] = new InternetAddress(ccmail.get(j));
+                            }
+
+                            // Set cc: header field of the header.
+                            for( int j = 0; j < ccAddress.length; j++) {
+                                message.addRecipient(Message.RecipientType.CC, ccAddress[j]);
+                            }
+
+                            InternetAddress[] bccAddress = new InternetAddress[bccmail.size()];
+
+                            // To get the array of bccaddresses
+                            for( int j = 0; j < bccmail.size(); j++ ) {
+                                bccAddress[j] = new InternetAddress(bccmail.get(j));
+                            }
+
+                            // Set bcc: header field of the header.
+                            for( int j = 0; j < bccAddress.length; j++) {
+                                message.addRecipient(Message.RecipientType.BCC, bccAddress[j]);
+                            }
                             String url = "https://console.firebase.google.com/u/3/project/lgbl-c68c1/storage/lgbl-c68c1.appspot.com/files/~2F";
                             String msg = "Our employee "+username+" has finished his travel and the picture of the  ticket is in this url "+url+usermail+"~2F"+formatteddate+"~2F"+formattedtime;
 //                            String msg = "Our employee "+username+" has finished his travel and the picture of the  ticket is in this url "+downloadurl;

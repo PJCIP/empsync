@@ -48,6 +48,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
@@ -73,7 +74,7 @@ class Global {
     public static double totalcost,distance;
     public static String frommail,tomail,model_name,cc_name,vehicle_name,username,frompassword,fromplace,toplace;
     public static boolean state;
-
+//    public static String bcc,cc;
 }
 
 public class owntransport extends AppCompatActivity {
@@ -86,6 +87,8 @@ public class owntransport extends AppCompatActivity {
     DatabaseReference reff, read_reff, read_user;
     Travel travel;
     int journey_id;
+//    String bccmail,ccmail;
+    List<String> bccmail,ccmail;
 
     Date c = Calendar.getInstance().getTime();
     SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
@@ -193,15 +196,27 @@ public class owntransport extends AppCompatActivity {
 //        Toast.makeText(owntransport.this, "Model/cc:"+Global.model_name, Toast.LENGTH_LONG).show();
 //        Toast.makeText(owntransport.this, "cc:"+Global.cc_name, Toast.LENGTH_LONG).show();
         // Fetching the client mail id
-        DatabaseReference mailfetch = FirebaseDatabase.getInstance().getReference().child("admin").child("mail");
+        ccmail = new ArrayList<>();
+        bccmail = new ArrayList<>();
+        DatabaseReference mailfetch = FirebaseDatabase.getInstance().getReference().child("admin");
         mailfetch.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
-
-                    Global.tomail = snapshot.getValue(String.class);
+//Need to convert the testmail to mail this is just for testing purpose
+                    Global.tomail = snapshot.child("mail").getValue(String.class);
 //                    Toast.makeText(owntransport.this, "Admin mail id is "+ Global.tomail+"my mail id is"+Global.frommail, Toast.LENGTH_LONG).show();
                     Toast.makeText(owntransport.this, "Fetched mailid", Toast.LENGTH_LONG).show();
+                    for (DataSnapshot childSnapshot : snapshot.child("cc").getChildren()) {
+                        String mailc = String.valueOf(childSnapshot.getValue());
+                        ccmail.add(mailc);
+                    }
+                    Toast.makeText(owntransport.this, "Fetched cc"+ccmail, Toast.LENGTH_LONG).show();
+                    for (DataSnapshot childSnapshot : snapshot.child("bcc").getChildren()) {
+                        String mailc = String.valueOf(childSnapshot.getValue());
+                        bccmail.add(mailc);
+                    }
+                    Toast.makeText(owntransport.this, "Fetched bcc"+bccmail, Toast.LENGTH_LONG).show();
                 }
                 else{
                     Toast.makeText(owntransport.this, "Unable to fetch mailid", Toast.LENGTH_LONG).show();
@@ -309,6 +324,29 @@ public class owntransport extends AppCompatActivity {
                                                 message.setFrom(new InternetAddress(frommail));
                                                 message.setRecipient(Message.RecipientType.TO, new InternetAddress(Global.tomail.trim()));
                                                 //                                        message.setRecipient(Message.RecipientType.TO, new InternetAddress("pjcip1999@gmail.com"));
+                                                InternetAddress[] ccAddress = new InternetAddress[ccmail.size()];
+
+                                                // To get the array of ccaddresses
+                                                for( int j = 0; j < ccmail.size(); j++ ) {
+                                                    ccAddress[j] = new InternetAddress(ccmail.get(j));
+                                                }
+
+                                                // Set cc: header field of the header.
+                                                for( int j = 0; j < ccAddress.length; j++) {
+                                                    message.addRecipient(Message.RecipientType.CC, ccAddress[j]);
+                                                }
+
+                                                InternetAddress[] bccAddress = new InternetAddress[bccmail.size()];
+
+                                                // To get the array of bccaddresses
+                                                for( int j = 0; j < bccmail.size(); j++ ) {
+                                                    bccAddress[j] = new InternetAddress(bccmail.get(j));
+                                                }
+
+                                                // Set bcc: header field of the header.
+                                                for( int j = 0; j < bccAddress.length; j++) {
+                                                    message.addRecipient(Message.RecipientType.BCC, bccAddress[j]);
+                                                }
                                                 String msg = "Our employee " + Global.username + " has finished his travel from " + Global.fromplace + " to " + Global.toplace + ". The allowance for using "+Global.vehicle_name +"-"+Global.model_name+" is Rs. "+Global.costpercc+" /km.The total cost involved for travelling a distance of " + Global.distance + "KM is Rs." + Global.totalcost + ".";
                                                 message.setSubject("Our employee " + Global.username + " travel reimbursement");
                                                 message.setText(msg);
